@@ -7,10 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
+
+import java.io.Serializable;
 
 @Entity
+@Data
 @Table (name = "estado")
-public class Estado {
+public class Estado  implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -19,41 +23,5 @@ public class Estado {
 	@JoinColumn(name = "pais_id")
 	private Pais pais;
 	private String nombre;
-	
-	public Estado() {
-
-	}
-	
-	public Estado(Pais pais, String nombre) {
-		super();
-		this.pais = pais;
-		this.nombre = nombre;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = (long) id;
-	}
-
-	public Pais getPais() {
-		return pais;
-	}
-
-	public void setPais(Pais pais) {
-		this.pais = pais;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	
 
 }
