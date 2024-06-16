@@ -109,10 +109,8 @@ public class PersonaService implements PersonaRepository{
 		return personaRepository.save(entity);
 	}
 
-	@Override
 	public Optional<Persona> findById(Long id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+		return personaRepository.findById(id);
 	}
 
 	@Override
